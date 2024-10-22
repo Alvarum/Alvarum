@@ -1,4 +1,7 @@
-I'm a **backend developer** passionate about solving challenges.
-I work primarily with **Python**, **networking**, and **server-side applications**. Always excited to take on new technical challenges and push the boundaries of what I can create.
+I'm a **backend developer** who enjoys solving challenges (bring it on!).  
+I work primarily with **Python**, **networking**, and **server-side applications**.  
 
-Feel free to reach out for **collaboration** or if you'd like to learn more about my work!
+In addition, I create music with **Ruby**, whip up some glitch art with **Java**,  
+and develop delightful little experiences for dusty vintage consoles and itch.io using a variety of techniques.  
+
+Feel free to reach out for **collaboration** or if you just want to chat about tech, retro games, generative art/music, or the magic of code!
