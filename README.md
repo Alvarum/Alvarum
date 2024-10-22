@@ -1,4 +1,4 @@
-I'm a **backend developer** who enjoys solving challenges (bring it on!).  
+I'm a **backend developer** who enjoys solving challenges.  
 I work primarily with **Python**, **networking**, and **server-side applications**.  
 
 In addition, I create music with **Ruby**, whip up some glitch art with **Java**,  
