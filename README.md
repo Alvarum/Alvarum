@@ -16,6 +16,8 @@
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=py,ts,rust,c,cs,js,html,css,bash" />
+  <img src="https://nodered.org/about/resources/media/node-red-icon.svg"
+     width="48" height="48" alt="Node-RED" />
 </p>
 
 <h2 align="center">🗄️ BDD</h2>
