@@ -31,3 +31,21 @@
 <p align="center">
   <img src="https://skillicons.dev/icons?i=linux,windows,raspberrypi,react,gcp,git,unity,godot,blender,ps" />
 </p>
+
+<h2 align="center">🎨 Creative Coding</h2>
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=processing,p5js"
+       alt="Processing & p5.js" />
+<a href="https://sonic-pi.net" title="Sonic Pi"
+   style="vertical-align: middle; display:inline-block;">
+  <span style="
+    display:inline-block;
+    width:48px; height:48px;
+    border-radius:12px;
+    background:
+      center/cover no-repeat
+      url('https://pbs.twimg.com/profile_images/1670125221653692418/-na090wD_400x400.jpg');
+  " aria-label="Sonic Pi"></span>
+</a>
+</p>
