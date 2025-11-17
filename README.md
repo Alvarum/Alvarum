@@ -1,6 +1,6 @@
 <p align="center">
   <samp>
-    I'm a <b>backend developer</b> who enjoys solving challenges.<br>
+    <b>backend developer</b><br>
     I work primarily with <b>Python</b>, <b>networking</b>, and <b>server-side applications</b>.<br><br>
 
     In addition, I create music with Ruby (Sonic Pi),
