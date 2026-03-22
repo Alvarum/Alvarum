@@ -1,33 +1,31 @@
 <p align="center">
-  <samp>
-    <b>backend developer</b><br>
-    I work primarily with <b>Python</b>, <b>networking</b>, and <b>server-side applications</b>.<br><br>
-
-    In addition, I create music with Ruby (Sonic Pi),
-    some generative art with Java (Processing),
-    and develop little experiences for dusty vintage consoles and itch.io using a variety of techniques.
-
-    Feel free to reach out for collaboration or if you just want to chat about
-    tech, retro stuff, or generative art/music with code!
-  </samp>
+  <img src="./assets/header.svg" alt="Álvaro Robles header" width="100%">
 </p>
 
-<h2 align="center">⚙️ Lenguages & Scripting</h2>
+# Álvaro Robles
+
+*Systems, tools and strange little machines.*
+
+I work across infrastructure, automation, software systems and creative
+technology.
+
+I am drawn to things that touch the real world:
+networks, services, logs, hardware, failure, noise, rhythm and form.
+
+Some projects are built for resilience and visibility.
+Others are built for texture, mood and curiosity.
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=py,ts,js,rust,c,cs,bash" />
-  <img src="https://nodered.org/about/resources/media/node-red-icon.svg"
-     width="48" height="48" alt="Node-RED" />
+  <img src="./assets/divider.svg" alt="" width="100%">
 </p>
 
-<h2 align="center">🗄️ BDD</h2>
+## Working across
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=firebase,mysql" />
-</p>
+**Critical systems**  
+Monitoring, diagnostics, automation and internal infrastructure.
 
-<h2 align="center">🧰 OS dev, Tools, Engines, Web Services, etc</h2>
+**Systems and software**  
+Services, tooling, workflows and architecture shaped by real constraints.
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=linux,windows,raspberrypi,react,gcp,git,unity,godot,blender,ps" />
-</p>
+**Creative computing**  
+Generative visuals, sound experiments, retro tech and small digital artifacts.
