@@ -1,0 +1,92 @@
+<svg width="1280" height="360" viewBox="0 0 1280 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Álvaro Robles — systems, tools and strange little machines</title>
+  <desc id="desc">Dark editorial banner with grid, waveform, orbit and technical details.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#070B13" />
+      <stop offset="0.58" stop-color="#0A1020" />
+      <stop offset="1" stop-color="#09141A" />
+    </linearGradient>
+    <linearGradient id="signal" x1="120" y1="0" x2="1160" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6A8B7B" stop-opacity="0.08" />
+      <stop offset="0.5" stop-color="#B8D7D0" stop-opacity="0.95" />
+      <stop offset="1" stop-color="#8C6FA3" stop-opacity="0.18" />
+    </linearGradient>
+    <linearGradient id="trace" x1="240" y1="86" x2="1130" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B8D7D0" stop-opacity="0.08" />
+      <stop offset="0.48" stop-color="#DDEBE7" stop-opacity="0.70" />
+      <stop offset="1" stop-color="#8B7AA5" stop-opacity="0.12" />
+    </linearGradient>
+    <filter id="glow" x="0" y="0" width="1280" height="360" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="2.6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" stroke="#DDEBE7" stroke-opacity="0.06" stroke-width="1" />
+    </pattern>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1.25" cy="1.25" r="1" fill="#C7DBD3" fill-opacity="0.08" />
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="360" rx="20" fill="url(#bg)" />
+  <rect x="1" y="1" width="1278" height="358" rx="19" stroke="#DDEBE7" stroke-opacity="0.08" />
+  <rect width="1280" height="360" rx="20" fill="url(#grid)" />
+  <rect width="1280" height="360" rx="20" fill="url(#dots)" />
+
+  <g opacity="0.22">
+    <path d="M0 284C91 244 168 219 264 235C337 247 406 288 486 292C573 296 655 255 744 254C835 253 918 293 1007 294C1102 295 1177 263 1280 214" stroke="#A9C7BE" stroke-opacity="0.18" stroke-width="1.5" />
+    <path d="M0 295C103 252 185 245 273 259C361 272 448 313 539 310C640 307 734 258 836 252C921 246 997 273 1082 272C1146 272 1204 257 1280 224" stroke="#8C6FA3" stroke-opacity="0.1" stroke-width="1.2" />
+  </g>
+
+  <g transform="translate(1030 54)">
+    <circle cx="0" cy="0" r="108" stroke="#DDEBE7" stroke-opacity="0.08" stroke-width="1.2" />
+    <circle cx="0" cy="0" r="72" stroke="#DDEBE7" stroke-opacity="0.08" stroke-width="1.2" />
+    <circle cx="0" cy="0" r="36" stroke="#DDEBE7" stroke-opacity="0.08" stroke-width="1.2" />
+    <path d="M-108 0C-83 -20 -54 -31 -21 -31C16 -31 52 -18 80 5C103 24 119 55 124 89" stroke="#DDEBE7" stroke-opacity="0.12" stroke-width="1.4" />
+    <circle cx="-72" cy="0" r="3.2" fill="#B8D7D0" fill-opacity="0.72" />
+    <circle cx="24" cy="-68" r="3.2" fill="#B8D7D0" fill-opacity="0.62" />
+    <circle cx="69" cy="28" r="3.2" fill="#CFAFE6" fill-opacity="0.54" />
+    <circle cx="-17" cy="35" r="4.8" fill="#DDEBE7" fill-opacity="0.84" filter="url(#glow)" />
+    <path d="M-72 0C-42 9 -25 19 -17 35" stroke="#DDEBE7" stroke-opacity="0.16" stroke-width="1.1" />
+    <path d="M24 -68C14 -44 2 -8 -17 35" stroke="#DDEBE7" stroke-opacity="0.16" stroke-width="1.1" />
+    <path d="M69 28C44 31 15 34 -17 35" stroke="#DDEBE7" stroke-opacity="0.16" stroke-width="1.1" />
+  </g>
+
+  <g transform="translate(80 74)">
+    <text x="0" y="0" fill="#F2F5F4" font-size="42" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="600" letter-spacing="0.6">Álvaro Robles</text>
+    <text x="2" y="35" fill="#B9C6D0" font-size="12" font-family="JetBrains Mono, Consolas, monospace" letter-spacing="2.2">SYSTEMS / INFRASTRUCTURE / SOFTWARE / CREATIVE TECHNOLOGY</text>
+
+    <path d="M0 72H860" stroke="url(#trace)" stroke-width="1.4" />
+
+    <text x="0" y="122" fill="#E7ECEA" font-size="28" font-family="Georgia, Inter, Segoe UI, serif" font-style="italic" letter-spacing="0.2">systems, tools and strange little machines</text>
+
+    <text x="0" y="176" fill="#D7E0DE" font-size="15" font-family="Inter, Segoe UI, Arial, sans-serif">Software that meets the real world: networks, services, logs, hardware,</text>
+    <text x="0" y="202" fill="#D7E0DE" font-size="15" font-family="Inter, Segoe UI, Arial, sans-serif">failure, noise, rhythm and form.</text>
+
+    <g transform="translate(0 236)">
+      <rect x="0" y="0" width="214" height="34" rx="17" fill="#0E1624" stroke="#DDEBE7" stroke-opacity="0.12" />
+      <circle cx="17" cy="17" r="4" fill="#C7DED6" fill-opacity="0.8" />
+      <text x="31" y="22" fill="#E6EEEC" font-size="12" font-family="JetBrains Mono, Consolas, monospace" letter-spacing="1.1">critical systems</text>
+
+      <rect x="226" y="0" width="214" height="34" rx="17" fill="#0E1624" stroke="#DDEBE7" stroke-opacity="0.12" />
+      <rect x="241" y="13" width="8" height="8" rx="2" fill="#C7DED6" fill-opacity="0.8" />
+      <text x="255" y="22" fill="#E6EEEC" font-size="12" font-family="JetBrains Mono, Consolas, monospace" letter-spacing="1.1">systems and software</text>
+
+      <rect x="452" y="0" width="214" height="34" rx="17" fill="#0E1624" stroke="#DDEBE7" stroke-opacity="0.12" />
+      <path d="M469 12L472.5 17L469 22L474 19.5L479 22L475.5 17L479 12L474 14.5L469 12Z" fill="#D5C2E6" fill-opacity="0.86" />
+      <text x="489" y="22" fill="#E6EEEC" font-size="12" font-family="JetBrains Mono, Consolas, monospace" letter-spacing="1.1">creative computing</text>
+    </g>
+  </g>
+
+  <g filter="url(#glow)">
+    <path d="M236 308C314 308 318 278 387 278C442 278 460 316 526 316C598 316 615 260 692 260C772 260 782 302 858 302C920 302 941 278 1006 278C1067 278 1088 293 1134 293" stroke="url(#signal)" stroke-width="2.6" stroke-linecap="round" />
+    <circle cx="236" cy="308" r="3.5" fill="#DDEBE7" fill-opacity="0.86" />
+    <circle cx="526" cy="316" r="3.5" fill="#DDEBE7" fill-opacity="0.86" />
+    <circle cx="692" cy="260" r="3.5" fill="#DDEBE7" fill-opacity="0.86" />
+    <circle cx="1006" cy="278" r="3.5" fill="#DDEBE7" fill-opacity="0.86" />
+  </g>
+</svg>
