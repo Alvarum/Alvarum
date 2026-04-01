@@ -1,92 +1,963 @@
-<svg width="1280" height="360" viewBox="0 0 1280 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Álvaro Robles — systems, tools and strange little machines</title>
-  <desc id="desc">Dark editorial banner with grid, waveform, orbit and technical details.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="360" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#070B13" />
-      <stop offset="0.58" stop-color="#0A1020" />
-      <stop offset="1" stop-color="#09141A" />
-    </linearGradient>
-    <linearGradient id="signal" x1="120" y1="0" x2="1160" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#6A8B7B" stop-opacity="0.08" />
-      <stop offset="0.5" stop-color="#B8D7D0" stop-opacity="0.95" />
-      <stop offset="1" stop-color="#8C6FA3" stop-opacity="0.18" />
-    </linearGradient>
-    <linearGradient id="trace" x1="240" y1="86" x2="1130" y2="86" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#B8D7D0" stop-opacity="0.08" />
-      <stop offset="0.48" stop-color="#DDEBE7" stop-opacity="0.70" />
-      <stop offset="1" stop-color="#8B7AA5" stop-opacity="0.12" />
-    </linearGradient>
-    <filter id="glow" x="0" y="0" width="1280" height="360" filterUnits="userSpaceOnUse">
-      <feGaussianBlur stdDeviation="2.6" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M 32 0 L 0 0 0 32" stroke="#DDEBE7" stroke-opacity="0.06" stroke-width="1" />
-    </pattern>
-    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="1.25" cy="1.25" r="1" fill="#C7DBD3" fill-opacity="0.08" />
-    </pattern>
-  </defs>
+<svg viewBox="0 0 860 390" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Álvaro Robles">
+<title>Álvaro Robles — Systems / Infrastructure / Creative Technology</title>
+<style>
+  @keyframes sqrScroll   { from{transform:translateX(0)}   to{transform:translateX(-60px)} }
+  @keyframes fltShift    { 0%,100%{transform:translateX(0)} 50%{transform:translateX(-7px)} }
+  @keyframes envPulse    { 0%,100%{opacity:.8} 50%{opacity:1} }
+  @keyframes blink       { 0%,49%{opacity:1}  50%,100%{opacity:0} }
+  @keyframes ledG        { 0%,40%,60%,100%{opacity:1}  50%{opacity:.06} }
+  @keyframes ledA        { 0%,38%,62%,100%{opacity:.9} 50%{opacity:.06} }
+  @keyframes ledB        { 0%,100%{opacity:.9} 50%{opacity:.08} }
+  @keyframes ledR        { 0%,90%,100%{opacity:.1} 95%{opacity:1} }
+  @keyframes pulse1      { from{stroke-dashoffset:280} to{stroke-dashoffset:0} }
+  @keyframes pulse2      { from{stroke-dashoffset:360} to{stroke-dashoffset:0} }
+  @keyframes pulse3      { from{stroke-dashoffset:220} to{stroke-dashoffset:0} }
+  @keyframes pulse4      { from{stroke-dashoffset:500} to{stroke-dashoffset:0} }
+  @keyframes pulse5      { from{stroke-dashoffset:700} to{stroke-dashoffset:0} }
+  @keyframes pulse6      { from{stroke-dashoffset:480} to{stroke-dashoffset:0} }
+  @keyframes vu1{0%,100%{opacity:.95}30%{opacity:.2}70%{opacity:1}}
+  @keyframes vu2{0%,100%{opacity:.85}25%{opacity:.04}55%{opacity:.9}}
+  @keyframes vu3{0%,100%{opacity:.5} 10%{opacity:.04}65%{opacity:.55}}
+  @keyframes vu4{0%,100%{opacity:.22}40%{opacity:.04}75%{opacity:.28}}
+  @keyframes vu5{0%,100%{opacity:.09}50%{opacity:.2}}
+  @keyframes vu6{0%,100%{opacity:.04}60%{opacity:.12}}
+  @keyframes flowSeq{
+    0%,12%{fill:#00d4ff;opacity:1}
+    13%,25%{fill:#9b79ff;opacity:1}
+    26%,38%{fill:#00ff88;opacity:1}
+    39%,51%{fill:#ffc857;opacity:1}
+    52%,64%{fill:#00d4ff;opacity:.3}
+    65%,77%{fill:#9b79ff;opacity:.3}
+    78%,90%{fill:#00ff88;opacity:.3}
+    91%,100%{fill:#ffc857;opacity:.3}
+  }
+  @keyframes screenPulse { 0%,100%{opacity:1} 50%{opacity:.92} }
+</style>
+<defs>
+  <!-- ── BACKGROUNDS ── -->
+  <radialGradient id="bgGr" cx="45%" cy="40%" r="72%">
+    <stop offset="0%"   stop-color="#0e0e24"/>
+    <stop offset="100%" stop-color="#04040c"/>
+  </radialGradient>
 
-  <rect width="1280" height="360" rx="20" fill="url(#bg)" />
-  <rect x="1" y="1" width="1278" height="358" rx="19" stroke="#DDEBE7" stroke-opacity="0.08" />
-  <rect width="1280" height="360" rx="20" fill="url(#grid)" />
-  <rect width="1280" height="360" rx="20" fill="url(#dots)" />
+  <!-- ── PANEL GLASS ── -->
+  <linearGradient id="panelGr" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#14142e"/>
+    <stop offset="100%" stop-color="#09091c"/>
+  </linearGradient>
 
-  <g opacity="0.22">
-    <path d="M0 284C91 244 168 219 264 235C337 247 406 288 486 292C573 296 655 255 744 254C835 253 918 293 1007 294C1102 295 1177 263 1280 214" stroke="#A9C7BE" stroke-opacity="0.18" stroke-width="1.5" />
-    <path d="M0 295C103 252 185 245 273 259C361 272 448 313 539 310C640 307 734 258 836 252C921 246 997 273 1082 272C1146 272 1204 257 1280 224" stroke="#8C6FA3" stroke-opacity="0.1" stroke-width="1.2" />
-  </g>
+  <!-- ── PANEL TOP EDGE (glass refraction line) ── -->
+  <linearGradient id="topEdge" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="rgba(100,100,220,0.05)"/>
+    <stop offset="20%"  stop-color="rgba(160,160,255,0.35)"/>
+    <stop offset="80%"  stop-color="rgba(160,160,255,0.35)"/>
+    <stop offset="100%" stop-color="rgba(100,100,220,0.05)"/>
+  </linearGradient>
 
-  <g transform="translate(1030 54)">
-    <circle cx="0" cy="0" r="108" stroke="#DDEBE7" stroke-opacity="0.08" stroke-width="1.2" />
-    <circle cx="0" cy="0" r="72" stroke="#DDEBE7" stroke-opacity="0.08" stroke-width="1.2" />
-    <circle cx="0" cy="0" r="36" stroke="#DDEBE7" stroke-opacity="0.08" stroke-width="1.2" />
-    <path d="M-108 0C-83 -20 -54 -31 -21 -31C16 -31 52 -18 80 5C103 24 119 55 124 89" stroke="#DDEBE7" stroke-opacity="0.12" stroke-width="1.4" />
-    <circle cx="-72" cy="0" r="3.2" fill="#B8D7D0" fill-opacity="0.72" />
-    <circle cx="24" cy="-68" r="3.2" fill="#B8D7D0" fill-opacity="0.62" />
-    <circle cx="69" cy="28" r="3.2" fill="#CFAFE6" fill-opacity="0.54" />
-    <circle cx="-17" cy="35" r="4.8" fill="#DDEBE7" fill-opacity="0.84" filter="url(#glow)" />
-    <path d="M-72 0C-42 9 -25 19 -17 35" stroke="#DDEBE7" stroke-opacity="0.16" stroke-width="1.1" />
-    <path d="M24 -68C14 -44 2 -8 -17 35" stroke="#DDEBE7" stroke-opacity="0.16" stroke-width="1.1" />
-    <path d="M69 28C44 31 15 34 -17 35" stroke="#DDEBE7" stroke-opacity="0.16" stroke-width="1.1" />
-  </g>
+  <!-- ── KNOB GRADIENTS ── -->
+  <radialGradient id="knobXL" cx="32%" cy="28%" r="78%">
+    <stop offset="0%"   stop-color="#28284e"/>
+    <stop offset="55%"  stop-color="#13132a"/>
+    <stop offset="100%" stop-color="#070713"/>
+  </radialGradient>
+  <radialGradient id="knobLg" cx="32%" cy="28%" r="78%">
+    <stop offset="0%"   stop-color="#24244a"/>
+    <stop offset="55%"  stop-color="#111128"/>
+    <stop offset="100%" stop-color="#060612"/>
+  </radialGradient>
+  <radialGradient id="knobMd" cx="32%" cy="28%" r="78%">
+    <stop offset="0%"   stop-color="#212145"/>
+    <stop offset="55%"  stop-color="#0f0f22"/>
+    <stop offset="100%" stop-color="#050510"/>
+  </radialGradient>
+  <radialGradient id="knobSm" cx="32%" cy="28%" r="78%">
+    <stop offset="0%"   stop-color="#1e1e40"/>
+    <stop offset="55%"  stop-color="#0d0d1e"/>
+    <stop offset="100%" stop-color="#04040e"/>
+  </radialGradient>
 
-  <g transform="translate(80 74)">
-    <text x="0" y="0" fill="#F2F5F4" font-size="42" font-family="Inter, Segoe UI, Arial, sans-serif" font-weight="600" letter-spacing="0.6">Álvaro Robles</text>
-    <text x="2" y="35" fill="#B9C6D0" font-size="12" font-family="JetBrains Mono, Consolas, monospace" letter-spacing="2.2">SYSTEMS / INFRASTRUCTURE / SOFTWARE / CREATIVE TECHNOLOGY</text>
+  <!-- ── DISPLAY SCREENS ── -->
+  <radialGradient id="scopeBg" cx="50%" cy="50%" r="65%">
+    <stop offset="0%"   stop-color="#030d05"/>
+    <stop offset="100%" stop-color="#010401"/>
+  </radialGradient>
+  <radialGradient id="fltBg" cx="50%" cy="50%" r="65%">
+    <stop offset="0%"   stop-color="#030712"/>
+    <stop offset="100%" stop-color="#010208"/>
+  </radialGradient>
+  <radialGradient id="envBg" cx="50%" cy="50%" r="65%">
+    <stop offset="0%"   stop-color="#0d0700"/>
+    <stop offset="100%" stop-color="#040200"/>
+  </radialGradient>
 
-    <path d="M0 72H860" stroke="url(#trace)" stroke-width="1.4" />
+  <!-- ── VU SEGMENT GRADIENTS ── -->
+  <linearGradient id="vuGr" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0%"   stop-color="#00ff44"/>
+    <stop offset="55%"  stop-color="#aaff00"/>
+    <stop offset="75%"  stop-color="#ffc200"/>
+    <stop offset="90%"  stop-color="#ff6600"/>
+    <stop offset="100%" stop-color="#ff2244"/>
+  </linearGradient>
 
-    <text x="0" y="122" fill="#E7ECEA" font-size="28" font-family="Georgia, Inter, Segoe UI, serif" font-style="italic" letter-spacing="0.2">systems, tools and strange little machines</text>
+  <!-- ── FILTERS ── -->
+  <filter id="phoGreen" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="2.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="phoCyan" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="phoAmber" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="ledGlw" x="-120%" y="-120%" width="340%" height="340%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="cabGlw" x="-10%" y="-40%" width="120%" height="180%">
+    <feGaussianBlur stdDeviation="1.8" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="nameGlw" x="-15%" y="-30%" width="130%" height="160%">
+    <feGaussianBlur stdDeviation="4" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="panelGlw" x="-2%" y="-2%" width="104%" height="104%">
+    <feGaussianBlur stdDeviation="4" result="b"/>
+    <feComposite in="b" in2="SourceGraphic" operator="out" result="g"/>
+    <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
 
-    <text x="0" y="176" fill="#D7E0DE" font-size="15" font-family="Inter, Segoe UI, Arial, sans-serif">Software that meets the real world: networks, services, logs, hardware,</text>
-    <text x="0" y="202" fill="#D7E0DE" font-size="15" font-family="Inter, Segoe UI, Arial, sans-serif">failure, noise, rhythm and form.</text>
+  <!-- ── CLIP PATHS (userSpaceOnUse = absolute screen coords) ──
+       M2 VCO at x=216,y=2; screen local(25,44) 126×72 → abs (241,46)
+       M3 VCF at x=394,y=2; screen local(24,44) 130×56 → abs (418,46) -->
+  <clipPath id="vcoClip" clipPathUnits="userSpaceOnUse">
+    <rect x="241" y="46" width="126" height="72" rx="3"/>
+  </clipPath>
+  <clipPath id="fltClip" clipPathUnits="userSpaceOnUse">
+    <rect x="418" y="46" width="130" height="56" rx="3"/>
+  </clipPath>
+</defs>
 
-    <g transform="translate(0 236)">
-      <rect x="0" y="0" width="214" height="34" rx="17" fill="#0E1624" stroke="#DDEBE7" stroke-opacity="0.12" />
-      <circle cx="17" cy="17" r="4" fill="#C7DED6" fill-opacity="0.8" />
-      <text x="31" y="22" fill="#E6EEEC" font-size="12" font-family="JetBrains Mono, Consolas, monospace" letter-spacing="1.1">critical systems</text>
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- BACKGROUND -->
+<!-- ════════════════════════════════════════════════════════ -->
+<rect width="860" height="390" fill="url(#bgGr)"/>
+<!-- Subtle horizontal scan lines for texture -->
+<rect width="860" height="390" fill="none"
+      stroke="rgba(30,30,80,0.04)" stroke-width="2"
+      stroke-dasharray="0 2"/>
 
-      <rect x="226" y="0" width="214" height="34" rx="17" fill="#0E1624" stroke="#DDEBE7" stroke-opacity="0.12" />
-      <rect x="241" y="13" width="8" height="8" rx="2" fill="#C7DED6" fill-opacity="0.8" />
-      <text x="255" y="22" fill="#E6EEEC" font-size="12" font-family="JetBrains Mono, Consolas, monospace" letter-spacing="1.1">systems and software</text>
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- MODULE 1 — IDENT  x=2, w=212 -->
+<!-- ════════════════════════════════════════════════════════ -->
+<g transform="translate(2,2)">
+  <!-- Shadow beneath panel -->
+  <rect x="2" y="4" width="212" height="352" rx="8" fill="rgba(0,0,0,0.5)"/>
+  <!-- Glass panel -->
+  <rect width="212" height="352" rx="8" fill="url(#panelGr)" stroke="rgba(100,100,220,0.18)" stroke-width="1"/>
+  <!-- Top glass edge highlight -->
+  <rect y="0" width="212" height="1" rx="1" fill="url(#topEdge)" opacity="1"/>
+  <!-- Inner top shimmer -->
+  <rect x="1" y="1" width="210" height="18" rx="7"
+        fill="rgba(140,140,255,0.04)"/>
 
-      <rect x="452" y="0" width="214" height="34" rx="17" fill="#0E1624" stroke="#DDEBE7" stroke-opacity="0.12" />
-      <path d="M469 12L472.5 17L469 22L474 19.5L479 22L475.5 17L479 12L474 14.5L469 12Z" fill="#D5C2E6" fill-opacity="0.86" />
-      <text x="489" y="22" fill="#E6EEEC" font-size="12" font-family="JetBrains Mono, Consolas, monospace" letter-spacing="1.1">creative computing</text>
+  <!-- MODULE LABEL -->
+  <text x="106" y="16" font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#38386a" text-anchor="middle" letter-spacing="4" font-weight="600">IDENT</text>
+  <line x1="16" y1="22" x2="196" y2="22" stroke="rgba(80,80,160,0.15)" stroke-width="1"/>
+
+  <!-- NAME with glow -->
+  <text x="106" y="66"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="20" font-weight="700" fill="rgba(160,160,255,0.15)"
+        text-anchor="middle" filter="url(#nameGlw)">Álvaro Robles</text>
+  <text x="106" y="66"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="20" font-weight="700" fill="#e8e8ff"
+        text-anchor="middle">Álvaro Robles</text>
+
+  <!-- Subtitle -->
+  <text x="106" y="82"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#3a3a70" text-anchor="middle" letter-spacing="2.2">
+    SYSTEMS · INFRA · SOFTWARE · CREATIVE
+  </text>
+
+  <line x1="16" y1="91" x2="196" y2="91" stroke="rgba(80,80,160,0.12)" stroke-width="1"/>
+
+  <!-- Areas -->
+  <text x="16" y="108"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" font-weight="700" fill="#9090d0">// critical systems</text>
+  <text x="16" y="122"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090">monitoring · diagnostics · automation</text>
+
+  <line x1="16" y1="132" x2="196" y2="132" stroke="rgba(80,80,160,0.1)" stroke-width="1"/>
+
+  <text x="16" y="148"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" font-weight="700" fill="#9090d0">// systems &amp; software</text>
+  <text x="16" y="162"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090">services · tooling · architecture</text>
+
+  <line x1="16" y1="172" x2="196" y2="172" stroke="rgba(80,80,160,0.1)" stroke-width="1"/>
+
+  <text x="16" y="188"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" font-weight="700" fill="#9090d0">// creative computing</text>
+  <text x="16" y="202"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090">generative · retro tech · artifacts</text>
+
+  <line x1="16" y1="212" x2="196" y2="212" stroke="rgba(80,80,160,0.1)" stroke-width="1"/>
+
+  <!-- Signal flow -->
+  <text x="16" y="228"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6.5" fill="#303060">signal chain</text>
+  <!-- Animated flow dots -->
+  <circle cx="16"  cy="240" r="3" fill="#00d4ff" style="animation:flowSeq 2.8s ease-in-out infinite 0s"/>
+  <text x="22" y="244"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#303060">VCO</text>
+  <text x="43" y="244"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#252550">→</text>
+  <circle cx="54"  cy="240" r="3" fill="#9b79ff" style="animation:flowSeq 2.8s ease-in-out infinite 0.7s"/>
+  <text x="60" y="244"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#303060">VCF</text>
+  <text x="80" y="244"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#252550">→</text>
+  <circle cx="91"  cy="240" r="3" fill="#00ff88" style="animation:flowSeq 2.8s ease-in-out infinite 1.4s"/>
+  <text x="97" y="244"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#303060">ENV</text>
+  <text x="118" y="244"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#252550">→</text>
+  <circle cx="129" cy="240" r="3" fill="#ffc857" style="animation:flowSeq 2.8s ease-in-out infinite 2.1s"/>
+  <text x="135" y="244"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#303060">OUT</text>
+
+  <line x1="16" y1="254" x2="196" y2="254" stroke="rgba(80,80,160,0.1)" stroke-width="1"/>
+
+  <!-- Status LEDs -->
+  <circle cx="24"  cy="266" r="4" fill="#00ff88" filter="url(#ledGlw)"
+          style="animation:ledG 3.2s ease-in-out infinite"/>
+  <text x="33"  y="270"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#7070b0">ONLINE</text>
+  <circle cx="110" cy="266" r="4" fill="#ffc857"
+          style="animation:ledA 5s ease-in-out infinite 1.6s"/>
+  <text x="119" y="270"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#7070b0">CL 🇨🇱</text>
+
+  <!-- Blinking cursor -->
+  <text x="16" y="284"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#303060">alvarum@everseek </text>
+  <rect x="142" y="275" width="5" height="9" rx="1" fill="#00d4ff" opacity="0.6"
+        style="animation:blink 1.1s step-end infinite"/>
+
+  <line x1="16" y1="296" x2="196" y2="296" stroke="rgba(80,80,160,0.12)" stroke-width="1"/>
+  <text x="106" y="313"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6.5" fill="#2a2a55" text-anchor="middle" letter-spacing="1.5">— PATCH POINTS —</text>
+
+  <!-- Jacks -->
+  <!-- OUT -->
+  <circle cx="40"  cy="332" r="1.5" fill="#05050f" opacity="0.8" transform="translate(1,1)"/>
+  <circle cx="40"  cy="332" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="40"  cy="332" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="40"  cy="332" r="2" fill="#030310"/>
+  <text x="40"  y="348"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">OUT</text>
+
+  <!-- CV -->
+  <circle cx="106" cy="332" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="106" cy="332" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="106" cy="332" r="2" fill="#030310"/>
+  <text x="106" y="348"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">CV</text>
+
+  <!-- GATE -->
+  <circle cx="172" cy="332" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="172" cy="332" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="172" cy="332" r="2" fill="#030310"/>
+  <text x="172" y="348"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">GATE</text>
+</g>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- MODULE 2 — VCO  x=216, w=176 -->
+<!-- ════════════════════════════════════════════════════════ -->
+<g transform="translate(216,2)">
+  <rect x="2" y="4" width="176" height="352" rx="8" fill="rgba(0,0,0,0.5)"/>
+  <rect width="176" height="352" rx="8" fill="url(#panelGr)" stroke="rgba(100,100,220,0.18)" stroke-width="1"/>
+  <rect y="0" width="176" height="1" rx="1" fill="url(#topEdge)"/>
+  <rect x="1" y="1" width="174" height="18" rx="7" fill="rgba(140,140,255,0.04)"/>
+
+  <text x="88" y="16"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#38386a" text-anchor="middle" letter-spacing="4" font-weight="600">VCO · OSC</text>
+  <line x1="14" y1="22" x2="162" y2="22" stroke="rgba(80,80,160,0.15)" stroke-width="1"/>
+
+  <!-- OSCILLOSCOPE SCREEN -->
+  <!-- Screen glow outer ring -->
+  <rect x="22" y="42" width="132" height="76" rx="5"
+        fill="none" stroke="rgba(0,255,136,0.08)" stroke-width="4"/>
+  <!-- Screen -->
+  <rect x="25" y="44" width="126" height="72" rx="4" fill="url(#scopeBg)"
+        stroke="rgba(0,80,30,0.6)" stroke-width="1"
+        style="animation:screenPulse 3s ease-in-out infinite"/>
+  <!-- Grid -->
+  <line x1="25" y1="62"  x2="151" y2="62"  stroke="rgba(0,60,20,0.6)" stroke-width="0.5"/>
+  <line x1="25" y1="80"  x2="151" y2="80"  stroke="rgba(0,80,30,0.8)" stroke-width="0.6"/>
+  <line x1="25" y1="98"  x2="151" y2="98"  stroke="rgba(0,60,20,0.6)" stroke-width="0.5"/>
+  <line x1="55"  y1="44" x2="55"  y2="116" stroke="rgba(0,60,20,0.6)" stroke-width="0.5"/>
+  <line x1="88"  y1="44" x2="88"  y2="116" stroke="rgba(0,80,30,0.8)" stroke-width="0.6"/>
+  <line x1="121" y1="44" x2="121" y2="116" stroke="rgba(0,60,20,0.6)" stroke-width="0.5"/>
+
+  <!-- SQUARE WAVE — local coords, center y=80, high=62, low=98, period=60 -->
+  <g clip-path="url(#vcoClip)">
+    <g style="animation:sqrScroll 0.9s linear infinite">
+      <path d="M-30,62 L0,62 L0,98 L60,98 L60,62 L120,62 L120,98 L180,98 L180,62 L210,62"
+            fill="none" stroke="#00ff88" stroke-width="2.2"
+            stroke-linejoin="miter" stroke-linecap="square"
+            filter="url(#phoGreen)"/>
     </g>
   </g>
 
-  <g filter="url(#glow)">
-    <path d="M236 308C314 308 318 278 387 278C442 278 460 316 526 316C598 316 615 260 692 260C772 260 782 302 858 302C920 302 941 278 1006 278C1067 278 1088 293 1134 293" stroke="url(#signal)" stroke-width="2.6" stroke-linecap="round" />
-    <circle cx="236" cy="308" r="3.5" fill="#DDEBE7" fill-opacity="0.86" />
-    <circle cx="526" cy="316" r="3.5" fill="#DDEBE7" fill-opacity="0.86" />
-    <circle cx="692" cy="260" r="3.5" fill="#DDEBE7" fill-opacity="0.86" />
-    <circle cx="1006" cy="278" r="3.5" fill="#DDEBE7" fill-opacity="0.86" />
+  <!-- Screen labels -->
+  <text x="29"  y="54"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="rgba(0,200,80,0.5)" font-weight="700">SQR</text>
+  <text x="109" y="54"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="rgba(0,200,80,0.4)">VCO·1</text>
+  <!-- Green LED indicator -->
+  <circle cx="155" cy="52" r="3.5" fill="#00ff88" filter="url(#ledGlw)"
+          style="animation:ledG 0.9s ease-in-out infinite"/>
+
+  <!-- ── KNOBS ── -->
+  <!-- FREQ (XL) -->
+  <circle cx="46"  cy="162" r="22" fill="rgba(0,0,0,0.4)" transform="translate(1.5,1.5)"/>
+  <circle cx="46"  cy="162" r="22" fill="url(#knobXL)"/>
+  <circle cx="46"  cy="162" r="22" fill="none" stroke="rgba(100,100,220,0.2)" stroke-width="0.6"/>
+  <circle cx="46"  cy="162" r="16" fill="none" stroke="rgba(70,70,180,0.15)" stroke-width="0.5"/>
+  <!-- indicator pointing up-right (2 o'clock) -->
+  <line x1="46" y1="162" x2="57" y2="145" stroke="#c8c8ff" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="46"  y="194"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">FREQ</text>
+
+  <!-- FINE (Lg) -->
+  <circle cx="108" cy="166" r="15" fill="rgba(0,0,0,0.4)" transform="translate(1.2,1.2)"/>
+  <circle cx="108" cy="166" r="15" fill="url(#knobLg)"/>
+  <circle cx="108" cy="166" r="15" fill="none" stroke="rgba(100,100,220,0.2)" stroke-width="0.6"/>
+  <line x1="108" y1="166" x2="114" y2="153" stroke="#c8c8ff" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="108" y="192"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">FINE</text>
+
+  <!-- WAVE selector -->
+  <rect x="136" y="154" width="28" height="16" rx="4"
+        fill="#08081e" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+  <text x="150" y="165"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#00d4ff" text-anchor="middle" font-weight="700">SQR</text>
+  <text x="150" y="192"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">WAVE</text>
+
+  <!-- Row 2 knobs: PWM / OCT / LVL -->
+  <!-- PWM -->
+  <circle cx="38"  cy="222" r="12" fill="rgba(0,0,0,0.4)" transform="translate(1,1)"/>
+  <circle cx="38"  cy="222" r="12" fill="url(#knobMd)"/>
+  <circle cx="38"  cy="222" r="12" fill="none" stroke="rgba(100,100,220,0.18)" stroke-width="0.5"/>
+  <line x1="38" y1="222" x2="35" y2="211" stroke="#c8c8ff" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="38"  y="243"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">PWM</text>
+
+  <!-- OCT display -->
+  <rect x="74" y="210" width="28" height="22" rx="4"
+        fill="#08081e" stroke="rgba(80,80,180,0.2)" stroke-width="1"/>
+  <!-- selected item highlight -->
+  <rect x="74" y="210" width="28" height="8" rx="3" fill="rgba(155,121,255,0.12)"/>
+  <text x="88" y="218"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6.5" fill="#9b79ff" text-anchor="middle">+2</text>
+  <text x="88" y="226"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6.5" fill="#404080" text-anchor="middle">+1</text>
+  <text x="88" y="234"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6.5" fill="#2a2a55" text-anchor="middle"> 0</text>
+  <text x="88" y="246"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">OCT</text>
+
+  <!-- LVL -->
+  <circle cx="138" cy="222" r="12" fill="rgba(0,0,0,0.4)" transform="translate(1,1)"/>
+  <circle cx="138" cy="222" r="12" fill="url(#knobMd)"/>
+  <circle cx="138" cy="222" r="12" fill="none" stroke="rgba(100,100,220,0.18)" stroke-width="0.5"/>
+  <line x1="138" y1="222" x2="144" y2="212" stroke="#c8c8ff" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="138" y="243"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">LVL</text>
+
+  <!-- Separator + jack label -->
+  <line x1="14" y1="258" x2="162" y2="258" stroke="rgba(80,80,160,0.12)" stroke-width="1"/>
+  <text x="88"  y="273"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6.5" fill="#2a2a55" text-anchor="middle" letter-spacing="1.5">— OUT —</text>
+
+  <!-- Jacks -->
+  <circle cx="36"  cy="294" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="36"  cy="294" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="36"  cy="294" r="2" fill="#030310"/>
+  <text x="36"  y="310"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">SQR</text>
+
+  <circle cx="88"  cy="294" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="88"  cy="294" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="88"  cy="294" r="2" fill="#030310"/>
+  <text x="88"  y="310"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">TRI</text>
+
+  <circle cx="140" cy="294" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="140" cy="294" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="140" cy="294" r="2" fill="#030310"/>
+  <text x="140" y="310"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">CV·IN</text>
+</g>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- MODULE 3 — VCF  x=394, w=176 -->
+<!-- ════════════════════════════════════════════════════════ -->
+<g transform="translate(394,2)">
+  <rect x="2" y="4" width="176" height="352" rx="8" fill="rgba(0,0,0,0.5)"/>
+  <rect width="176" height="352" rx="8" fill="url(#panelGr)" stroke="rgba(100,100,220,0.18)" stroke-width="1"/>
+  <rect y="0" width="176" height="1" rx="1" fill="url(#topEdge)"/>
+  <rect x="1" y="1" width="174" height="18" rx="7" fill="rgba(140,140,255,0.04)"/>
+
+  <text x="88" y="16"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#38386a" text-anchor="middle" letter-spacing="4" font-weight="600">VCF · FILTER</text>
+  <line x1="14" y1="22" x2="162" y2="22" stroke="rgba(80,80,160,0.15)" stroke-width="1"/>
+
+  <!-- FILTER SCREEN -->
+  <rect x="20" y="42" width="136" height="60" rx="5"
+        fill="none" stroke="rgba(0,180,255,0.07)" stroke-width="4"/>
+  <rect x="24" y="44" width="130" height="56" rx="4" fill="url(#fltBg)"
+        stroke="rgba(0,50,100,0.6)" stroke-width="1"
+        style="animation:screenPulse 4s ease-in-out infinite 1s"/>
+  <!-- Grid -->
+  <line x1="24"  y1="61"  x2="154" y2="61"  stroke="rgba(0,30,80,0.7)" stroke-width="0.5"/>
+  <line x1="24"  y1="72"  x2="154" y2="72"  stroke="rgba(0,50,120,0.9)" stroke-width="0.6"/>
+  <line x1="24"  y1="83"  x2="154" y2="83"  stroke="rgba(0,30,80,0.7)" stroke-width="0.5"/>
+  <line x1="56"  y1="44"  x2="56"  y2="100" stroke="rgba(0,30,80,0.7)" stroke-width="0.5"/>
+  <line x1="89"  y1="44"  x2="89"  y2="100" stroke="rgba(0,50,120,0.9)" stroke-width="0.6"/>
+  <line x1="122" y1="44"  x2="122" y2="100" stroke="rgba(0,30,80,0.7)" stroke-width="0.5"/>
+
+  <!-- LPF Curve (local coords) with glow -->
+  <g clip-path="url(#fltClip)">
+    <g style="animation:fltShift 3.5s ease-in-out infinite">
+      <path d="M24,100 L24,47 L55,47 L70,48 L82,51 L91,57 L98,65 L103,75 L108,88 L111,97 L154,100"
+            fill="none" stroke="#00d4ff" stroke-width="1.8" filter="url(#phoCyan)"/>
+      <path d="M24,100 L24,47 L55,47 L70,48 L82,51 L91,57 L98,65 L103,75 L108,88 L111,97 L154,100 Z"
+            fill="#00d4ff" fill-opacity="0.07"/>
+    </g>
   </g>
+  <text x="27"  y="54"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="rgba(0,180,255,0.45)" font-weight="700">LPF</text>
+  <text x="108" y="54"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="rgba(0,180,255,0.35)">12dB</text>
+  <circle cx="148" cy="52" r="3.5" fill="#00d4ff" filter="url(#ledGlw)"
+          style="animation:ledB 2.6s ease-in-out infinite 0.6s"/>
+
+  <!-- CUTOFF (XL) -->
+  <circle cx="50"  cy="162" r="22" fill="rgba(0,0,0,0.4)" transform="translate(1.5,1.5)"/>
+  <circle cx="50"  cy="162" r="22" fill="url(#knobXL)"/>
+  <circle cx="50"  cy="162" r="22" fill="none" stroke="rgba(100,100,220,0.2)" stroke-width="0.6"/>
+  <circle cx="50"  cy="162" r="16" fill="none" stroke="rgba(70,70,180,0.15)" stroke-width="0.5"/>
+  <line x1="50" y1="162" x2="50" y2="142" stroke="#c8c8ff" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="50"  y="195"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">CUTOFF</text>
+
+  <!-- RESO (Lg) -->
+  <circle cx="130" cy="162" r="18" fill="rgba(0,0,0,0.4)" transform="translate(1.2,1.2)"/>
+  <circle cx="130" cy="162" r="18" fill="url(#knobLg)"/>
+  <circle cx="130" cy="162" r="18" fill="none" stroke="rgba(100,100,220,0.2)" stroke-width="0.6"/>
+  <line x1="130" y1="162" x2="137" y2="146" stroke="#c8c8ff" stroke-width="1.6" stroke-linecap="round"/>
+  <text x="130" y="195"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">RESO</text>
+
+  <!-- ENV / KB / DRIVE -->
+  <circle cx="36"  cy="222" r="12" fill="rgba(0,0,0,0.4)" transform="translate(1,1)"/>
+  <circle cx="36"  cy="222" r="12" fill="url(#knobMd)"/>
+  <circle cx="36"  cy="222" r="12" fill="none" stroke="rgba(100,100,220,0.18)" stroke-width="0.5"/>
+  <line x1="36" y1="222" x2="33" y2="211" stroke="#c8c8ff" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="36"  y="243"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">ENV</text>
+
+  <circle cx="88"  cy="222" r="12" fill="rgba(0,0,0,0.4)" transform="translate(1,1)"/>
+  <circle cx="88"  cy="222" r="12" fill="url(#knobMd)"/>
+  <circle cx="88"  cy="222" r="12" fill="none" stroke="rgba(100,100,220,0.18)" stroke-width="0.5"/>
+  <line x1="88" y1="222" x2="88" y2="211" stroke="#c8c8ff" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="88"  y="243"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">KB</text>
+
+  <circle cx="140" cy="222" r="12" fill="rgba(0,0,0,0.4)" transform="translate(1,1)"/>
+  <circle cx="140" cy="222" r="12" fill="url(#knobMd)"/>
+  <circle cx="140" cy="222" r="12" fill="none" stroke="rgba(100,100,220,0.18)" stroke-width="0.5"/>
+  <line x1="140" y1="222" x2="146" y2="212" stroke="#c8c8ff" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="140" y="243"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">DRIVE</text>
+
+  <!-- Mode chips -->
+  <rect x="18" y="251" width="28" height="12" rx="3"
+        fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.25)" stroke-width="0.6"/>
+  <text x="32" y="260"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#00d4ff" text-anchor="middle">LP</text>
+  <rect x="50" y="251" width="28" height="12" rx="3"
+        fill="rgba(80,80,160,0.08)" stroke="rgba(80,80,180,0.15)" stroke-width="0.6"/>
+  <text x="64" y="260"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#404080" text-anchor="middle">BP</text>
+  <rect x="82" y="251" width="28" height="12" rx="3"
+        fill="rgba(80,80,160,0.08)" stroke="rgba(80,80,180,0.15)" stroke-width="0.6"/>
+  <text x="96" y="260"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#404080" text-anchor="middle">HP</text>
+  <rect x="114" y="251" width="28" height="12" rx="3"
+        fill="rgba(80,80,160,0.08)" stroke="rgba(80,80,180,0.15)" stroke-width="0.6"/>
+  <text x="128" y="260"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#404080" text-anchor="middle">NT</text>
+
+  <line x1="14" y1="270" x2="162" y2="270" stroke="rgba(80,80,160,0.12)" stroke-width="1"/>
+  <text x="88"  y="283"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6.5" fill="#2a2a55" text-anchor="middle" letter-spacing="1.5">— I/O —</text>
+
+  <!-- Jacks -->
+  <circle cx="36"  cy="300" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="36"  cy="300" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="36"  cy="300" r="2" fill="#030310"/>
+  <text x="36"  y="316"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">IN</text>
+
+  <circle cx="88"  cy="300" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="88"  cy="300" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="88"  cy="300" r="2" fill="#030310"/>
+  <text x="88"  y="316"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">OUT</text>
+
+  <circle cx="140" cy="300" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="140" cy="300" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="140" cy="300" r="2" fill="#030310"/>
+  <text x="140" y="316"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">CV</text>
+</g>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- MODULE 4 — ENV  x=572, w=176 -->
+<!-- ════════════════════════════════════════════════════════ -->
+<g transform="translate(572,2)">
+  <rect x="2" y="4" width="176" height="352" rx="8" fill="rgba(0,0,0,0.5)"/>
+  <rect width="176" height="352" rx="8" fill="url(#panelGr)" stroke="rgba(100,100,220,0.18)" stroke-width="1"/>
+  <rect y="0" width="176" height="1" rx="1" fill="url(#topEdge)"/>
+  <rect x="1" y="1" width="174" height="18" rx="7" fill="rgba(140,140,255,0.04)"/>
+
+  <text x="88" y="16"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#38386a" text-anchor="middle" letter-spacing="4" font-weight="600">ENV · ADSR</text>
+  <line x1="14" y1="22" x2="162" y2="22" stroke="rgba(80,80,160,0.15)" stroke-width="1"/>
+
+  <!-- ENV SCREEN -->
+  <rect x="16" y="40" width="144" height="68" rx="5"
+        fill="none" stroke="rgba(255,200,80,0.06)" stroke-width="4"/>
+  <rect x="18" y="42" width="140" height="64" rx="4" fill="url(#envBg)"
+        stroke="rgba(80,50,0,0.6)" stroke-width="1"
+        style="animation:screenPulse 2.5s ease-in-out infinite 0.5s"/>
+  <!-- Grid -->
+  <line x1="18"  y1="60"  x2="158" y2="60"  stroke="rgba(60,35,0,0.7)" stroke-width="0.5"/>
+  <line x1="18"  y1="74"  x2="158" y2="74"  stroke="rgba(80,50,0,0.9)" stroke-width="0.6"/>
+  <line x1="18"  y1="88"  x2="158" y2="88"  stroke="rgba(60,35,0,0.7)" stroke-width="0.5"/>
+  <line x1="52"  y1="42"  x2="52"  y2="106" stroke="rgba(60,35,0,0.7)" stroke-width="0.5"/>
+  <line x1="88"  y1="42"  x2="88"  y2="106" stroke="rgba(80,50,0,0.9)" stroke-width="0.6"/>
+  <line x1="124" y1="42"  x2="124" y2="106" stroke="rgba(60,35,0,0.7)" stroke-width="0.5"/>
+
+  <!-- ADSR envelope curve (local) -->
+  <path d="M20,106 L28,44 L50,44 L66,76 L116,76 L132,106"
+        fill="none" stroke="#ffc857" stroke-width="2"
+        filter="url(#phoAmber)"
+        style="animation:envPulse 2.2s ease-in-out infinite"/>
+  <path d="M20,106 L28,44 L50,44 L66,76 L116,76 L132,106 Z"
+        fill="#ffc857" fill-opacity="0.08"/>
+
+  <text x="31"  y="109"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="rgba(200,140,0,0.45)">A</text>
+  <text x="52"  y="109"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="rgba(200,140,0,0.4)">D</text>
+  <text x="88"  y="109"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="rgba(200,140,0,0.4)">S</text>
+  <text x="124" y="109"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="rgba(200,140,0,0.4)">R</text>
+  <circle cx="152" cy="50" r="3.5" fill="#ffc857" filter="url(#ledGlw)"
+          style="animation:ledA 2.2s ease-in-out infinite 1.1s"/>
+
+  <!-- ATK DCY SUS REL knobs -->
+  <circle cx="26"  cy="158" r="14" fill="rgba(0,0,0,0.4)" transform="translate(1.2,1.2)"/>
+  <circle cx="26"  cy="158" r="14" fill="url(#knobMd)"/>
+  <circle cx="26"  cy="158" r="14" fill="none" stroke="rgba(100,100,220,0.2)" stroke-width="0.5"/>
+  <line x1="26" y1="158" x2="22" y2="146" stroke="#c8c8ff" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="26"  y="180"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">ATK</text>
+
+  <circle cx="68"  cy="158" r="14" fill="rgba(0,0,0,0.4)" transform="translate(1.2,1.2)"/>
+  <circle cx="68"  cy="158" r="14" fill="url(#knobMd)"/>
+  <circle cx="68"  cy="158" r="14" fill="none" stroke="rgba(100,100,220,0.2)" stroke-width="0.5"/>
+  <line x1="68" y1="158" x2="68" y2="146" stroke="#c8c8ff" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="68"  y="180"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">DCY</text>
+
+  <circle cx="110" cy="158" r="14" fill="rgba(0,0,0,0.4)" transform="translate(1.2,1.2)"/>
+  <circle cx="110" cy="158" r="14" fill="url(#knobMd)"/>
+  <circle cx="110" cy="158" r="14" fill="none" stroke="rgba(100,100,220,0.2)" stroke-width="0.5"/>
+  <line x1="110" y1="158" x2="116" y2="147" stroke="#c8c8ff" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="110" y="180"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">SUS</text>
+
+  <circle cx="150" cy="160" r="11" fill="rgba(0,0,0,0.4)" transform="translate(1,1)"/>
+  <circle cx="150" cy="160" r="11" fill="url(#knobSm)"/>
+  <circle cx="150" cy="160" r="11" fill="none" stroke="rgba(100,100,220,0.18)" stroke-width="0.5"/>
+  <line x1="150" y1="160" x2="153" y2="150" stroke="#c8c8ff" stroke-width="1.3" stroke-linecap="round"/>
+  <text x="150" y="180"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">REL</text>
+
+  <!-- VEL / LOOP toggle / AMT -->
+  <circle cx="36"  cy="218" r="12" fill="rgba(0,0,0,0.4)" transform="translate(1,1)"/>
+  <circle cx="36"  cy="218" r="12" fill="url(#knobMd)"/>
+  <circle cx="36"  cy="218" r="12" fill="none" stroke="rgba(100,100,220,0.18)" stroke-width="0.5"/>
+  <line x1="36" y1="218" x2="33" y2="207" stroke="#c8c8ff" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="36"  y="239"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">VEL</text>
+
+  <!-- Loop toggle pill -->
+  <rect x="76" y="208" width="40" height="16" rx="8" fill="#08081e" stroke="rgba(80,80,180,0.2)" stroke-width="1"/>
+  <circle cx="84" cy="216" r="6" fill="#131330"/>
+  <text x="100" y="220"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6.5" fill="#303060" text-anchor="middle">LP</text>
+  <text x="96"  y="239"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">LOOP</text>
+
+  <circle cx="142" cy="218" r="12" fill="rgba(0,0,0,0.4)" transform="translate(1,1)"/>
+  <circle cx="142" cy="218" r="12" fill="url(#knobMd)"/>
+  <circle cx="142" cy="218" r="12" fill="none" stroke="rgba(100,100,220,0.18)" stroke-width="0.5"/>
+  <line x1="142" y1="218" x2="148" y2="208" stroke="#c8c8ff" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="142" y="239"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">AMT</text>
+
+  <line x1="14" y1="252" x2="162" y2="252" stroke="rgba(80,80,160,0.12)" stroke-width="1"/>
+  <text x="88" y="265"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6.5" fill="#2a2a55" text-anchor="middle" letter-spacing="1.5">— I/O —</text>
+
+  <!-- Jacks -->
+  <circle cx="36"  cy="282" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="36"  cy="282" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="36"  cy="282" r="2" fill="#030310"/>
+  <text x="36"  y="298"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">GATE</text>
+
+  <circle cx="88"  cy="282" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="88"  cy="282" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="88"  cy="282" r="2" fill="#030310"/>
+  <text x="88"  y="298"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">OUT</text>
+
+  <circle cx="140" cy="282" r="8" fill="#0b0b20" stroke="rgba(100,100,220,0.3)" stroke-width="1"/>
+  <circle cx="140" cy="282" r="5.5" fill="#07071a" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="140" cy="282" r="2" fill="#030310"/>
+  <text x="140" y="298"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#505090" text-anchor="middle">INV</text>
+</g>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- MODULE 5 — OUTPUT  x=750, w=108 -->
+<!-- ════════════════════════════════════════════════════════ -->
+<g transform="translate(750,2)">
+  <rect x="2" y="4" width="108" height="352" rx="8" fill="rgba(0,0,0,0.5)"/>
+  <rect width="108" height="352" rx="8" fill="url(#panelGr)" stroke="rgba(100,100,220,0.18)" stroke-width="1"/>
+  <rect y="0" width="108" height="1" rx="1" fill="url(#topEdge)"/>
+  <rect x="1" y="1" width="106" height="18" rx="7" fill="rgba(140,140,255,0.04)"/>
+
+  <text x="54" y="16"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7" fill="#38386a" text-anchor="middle" letter-spacing="4" font-weight="600">OUTPUT</text>
+  <line x1="10" y1="22" x2="98" y2="22" stroke="rgba(80,80,160,0.15)" stroke-width="1"/>
+
+  <!-- VU METER — premium gradient version -->
+  <rect x="14" y="36" width="80" height="104" rx="5"
+        fill="#060614" stroke="rgba(60,60,140,0.2)" stroke-width="1"/>
+  <!-- L channel segments x=20..32, R channel x=38..50 -->
+
+  <!-- L background -->
+  <rect x="20" y="40"  width="12" height="88" rx="2" fill="#0a0a20"/>
+  <!-- Gradient overlay (reveals as "active") -->
+  <rect x="20" y="40"  width="12" height="88" rx="2" fill="url(#vuGr)" style="animation:vu1 0.38s linear infinite"/>
+
+  <!-- R background -->
+  <rect x="38" y="40"  width="12" height="88" rx="2" fill="#0a0a20"/>
+  <rect x="38" y="40"  width="12" height="88" rx="2" fill="url(#vuGr)" style="animation:vu1 0.42s linear infinite 0.05s"/>
+
+  <!-- Segment grid overlay to create LED segment look -->
+  <rect x="20" y="48"  width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="20" y="59"  width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="20" y="70"  width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="20" y="81"  width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="20" y="92"  width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="20" y="103" width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="20" y="114" width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="38" y="48"  width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="38" y="59"  width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="38" y="70"  width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="38" y="81"  width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="38" y="92"  width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="38" y="103" width="12" height="1" rx="0" fill="#06060e"/>
+  <rect x="38" y="114" width="12" height="1" rx="0" fill="#06060e"/>
+
+  <!-- Labels -->
+  <text x="26"  y="136"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#404080" text-anchor="middle">L</text>
+  <text x="44"  y="136"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#404080" text-anchor="middle">R</text>
+
+  <!-- CLIP LED -->
+  <circle cx="66" cy="44" r="3.5" fill="#ff2244" filter="url(#ledGlw)"
+          style="animation:ledR 9s ease-in-out infinite 4s"/>
+  <text x="80" y="50"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6" fill="#3a0010" text-anchor="middle">CLIP</text>
+
+  <!-- dBFS scale -->
+  <text x="62"  y="44"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="5" fill="#2a2a50">0</text>
+  <text x="62"  y="88"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="5" fill="#2a2a50">-12</text>
+  <text x="62"  y="124"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="5" fill="#2a2a50">-∞</text>
+
+  <!-- VOL knob (XL) -->
+  <circle cx="54"  cy="188" r="22" fill="rgba(0,0,0,0.4)" transform="translate(1.5,1.5)"/>
+  <circle cx="54"  cy="188" r="22" fill="url(#knobXL)"/>
+  <circle cx="54"  cy="188" r="22" fill="none" stroke="rgba(100,100,220,0.2)" stroke-width="0.6"/>
+  <circle cx="54"  cy="188" r="16" fill="none" stroke="rgba(70,70,180,0.15)" stroke-width="0.5"/>
+  <line x1="54" y1="188" x2="60" y2="170" stroke="#c8c8ff" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="54"  y="220"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">VOL</text>
+
+  <!-- STEREO toggle -->
+  <rect x="18" y="228" width="72" height="15" rx="7" fill="#08081e" stroke="rgba(80,80,180,0.2)" stroke-width="1"/>
+  <circle cx="27" cy="235" r="6" fill="#131330"/>
+  <text x="57"  y="239"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6.5" fill="#404080" text-anchor="middle">STEREO</text>
+  <text x="54"  y="255"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#5050a0" text-anchor="middle">MODE</text>
+
+  <line x1="12" y1="264" x2="96" y2="264" stroke="rgba(80,80,160,0.12)" stroke-width="1"/>
+  <text x="54" y="278"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="6.5" fill="#2a2a55" text-anchor="middle" letter-spacing="1">— OUT —</text>
+
+  <!-- Large output jacks -->
+  <circle cx="30" cy="300" r="10" fill="#080820" stroke="rgba(100,100,220,0.35)" stroke-width="1.2"/>
+  <circle cx="30" cy="300" r="7"  fill="#050514" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="30" cy="300" r="3"  fill="#030310"/>
+  <text x="30"  y="318"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#606090" text-anchor="middle">L</text>
+
+  <circle cx="78" cy="300" r="10" fill="#080820" stroke="rgba(100,100,220,0.35)" stroke-width="1.2"/>
+  <circle cx="78" cy="300" r="7"  fill="#050514" stroke="rgba(80,80,180,0.2)" stroke-width="0.5"/>
+  <circle cx="78" cy="300" r="3"  fill="#030310"/>
+  <text x="78"  y="318"
+        font-family="'SF Mono','Fira Code','Consolas','Courier New',monospace"
+        font-size="7.5" fill="#606090" text-anchor="middle">R</text>
+</g>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- PATCH CABLES
+  Jack absolute positions (module_x + local_jack_x, 2 + local_jack_y):
+  M1: OUT=(42,334)  CV=(108,334)  GATE=(174,334)
+  M2: SQR=(252,296) TRI=(304,296) CVIN=(356,296)
+  M3: IN=(430,302)  OUT=(482,302) CV=(534,302)
+  M4: GATE=(608,284) OUT=(660,284) INV=(712,284)
+  M5: L=(780,302)   R=(828,302)
+-->
+<!-- ════════════════════════════════════════════════════════ -->
+
+<!-- ORANGE: VCO SQR → VCF IN -->
+<path d="M252,296 C252,356 430,356 430,302"
+      fill="none" stroke="rgba(80,28,0,0.6)" stroke-width="6" stroke-linecap="round"/>
+<path d="M252,296 C252,354 430,354 430,302"
+      fill="none" stroke="#ff6422" stroke-width="4" stroke-linecap="round" filter="url(#cabGlw)"/>
+<path d="M252,296 C252,354 430,354 430,302"
+      fill="none" stroke="rgba(255,180,100,0.7)" stroke-width="2"
+      stroke-dasharray="12 7" style="animation:pulse1 2s linear infinite"/>
+
+<!-- CYAN: VCF OUT → ENV GATE -->
+<path d="M482,302 C482,362 608,362 608,284"
+      fill="none" stroke="rgba(0,50,80,0.6)" stroke-width="6" stroke-linecap="round"/>
+<path d="M482,302 C482,360 608,360 608,284"
+      fill="none" stroke="#00d4ff" stroke-width="4" stroke-linecap="round" filter="url(#cabGlw)"/>
+<path d="M482,302 C482,360 608,360 608,284"
+      fill="none" stroke="rgba(150,240,255,0.7)" stroke-width="2"
+      stroke-dasharray="12 7" style="animation:pulse2 2.5s linear infinite"/>
+
+<!-- AMBER: ENV OUT → OUT L -->
+<path d="M660,284 C660,348 780,348 780,302"
+      fill="none" stroke="rgba(80,50,0,0.6)" stroke-width="6" stroke-linecap="round"/>
+<path d="M660,284 C660,346 780,346 780,302"
+      fill="none" stroke="#ffc857" stroke-width="4" stroke-linecap="round" filter="url(#cabGlw)"/>
+<path d="M660,284 C660,346 780,346 780,302"
+      fill="none" stroke="rgba(255,230,150,0.7)" stroke-width="2"
+      stroke-dasharray="12 7" style="animation:pulse3 2.2s linear infinite"/>
+
+<!-- VIOLET: IDENT CV → VCO CVIN -->
+<path d="M108,334 C108,378 356,378 356,296"
+      fill="none" stroke="rgba(40,0,80,0.6)" stroke-width="6" stroke-linecap="round"/>
+<path d="M108,334 C108,376 356,376 356,296"
+      fill="none" stroke="#9b79ff" stroke-width="4" stroke-linecap="round" filter="url(#cabGlw)"/>
+<path d="M108,334 C108,376 356,376 356,296"
+      fill="none" stroke="rgba(200,180,255,0.7)" stroke-width="2"
+      stroke-dasharray="12 8" style="animation:pulse4 3.2s linear infinite"/>
+
+<!-- GREEN: VCO TRI → OUT R (long arc) -->
+<path d="M304,296 C304,382 828,382 828,302"
+      fill="none" stroke="rgba(0,40,0,0.6)" stroke-width="6" stroke-linecap="round"/>
+<path d="M304,296 C304,380 828,380 828,302"
+      fill="none" stroke="#00ff88" stroke-width="4" stroke-linecap="round" filter="url(#cabGlw)"/>
+<path d="M304,296 C304,380 828,380 828,302"
+      fill="none" stroke="rgba(150,255,200,0.7)" stroke-width="2"
+      stroke-dasharray="14 8" style="animation:pulse5 3.9s linear infinite"/>
+
+<!-- PINK: IDENT GATE → VCF CV (long) -->
+<path d="M174,334 C174,385 534,385 534,302"
+      fill="none" stroke="rgba(80,0,40,0.6)" stroke-width="6" stroke-linecap="round"/>
+<path d="M174,334 C174,383 534,383 534,302"
+      fill="none" stroke="#ff4499" stroke-width="4" stroke-linecap="round" filter="url(#cabGlw)"/>
+<path d="M174,334 C174,383 534,383 534,302"
+      fill="none" stroke="rgba(255,170,210,0.7)" stroke-width="2"
+      stroke-dasharray="13 8" style="animation:pulse6 3.5s linear infinite"/>
+
+<!-- ── Cable end plugs (2-layer glow rings) ── -->
+<!-- Orange -->
+<circle cx="252" cy="296" r="6" fill="rgba(255,80,0,0.15)" filter="url(#cabGlw)"/>
+<circle cx="252" cy="296" r="4.5" fill="#ff6422" stroke="rgba(255,100,20,0.5)" stroke-width="1"/>
+<circle cx="252" cy="296" r="2" fill="#cc4400"/>
+<circle cx="430" cy="302" r="6" fill="rgba(255,80,0,0.15)" filter="url(#cabGlw)"/>
+<circle cx="430" cy="302" r="4.5" fill="#ff6422" stroke="rgba(255,100,20,0.5)" stroke-width="1"/>
+<circle cx="430" cy="302" r="2" fill="#cc4400"/>
+
+<!-- Cyan -->
+<circle cx="482" cy="302" r="6" fill="rgba(0,200,255,0.15)" filter="url(#cabGlw)"/>
+<circle cx="482" cy="302" r="4.5" fill="#00d4ff" stroke="rgba(0,200,255,0.5)" stroke-width="1"/>
+<circle cx="482" cy="302" r="2" fill="#008fbb"/>
+<circle cx="608" cy="284" r="6" fill="rgba(0,200,255,0.15)" filter="url(#cabGlw)"/>
+<circle cx="608" cy="284" r="4.5" fill="#00d4ff" stroke="rgba(0,200,255,0.5)" stroke-width="1"/>
+<circle cx="608" cy="284" r="2" fill="#008fbb"/>
+
+<!-- Amber -->
+<circle cx="660" cy="284" r="6" fill="rgba(255,200,0,0.15)" filter="url(#cabGlw)"/>
+<circle cx="660" cy="284" r="4.5" fill="#ffc857" stroke="rgba(255,200,50,0.5)" stroke-width="1"/>
+<circle cx="660" cy="284" r="2" fill="#bb8800"/>
+<circle cx="780" cy="302" r="6" fill="rgba(255,200,0,0.15)" filter="url(#cabGlw)"/>
+<circle cx="780" cy="302" r="4.5" fill="#ffc857" stroke="rgba(255,200,50,0.5)" stroke-width="1"/>
+<circle cx="780" cy="302" r="2" fill="#bb8800"/>
+
+<!-- Violet -->
+<circle cx="108" cy="334" r="6" fill="rgba(155,100,255,0.15)" filter="url(#cabGlw)"/>
+<circle cx="108" cy="334" r="4.5" fill="#9b79ff" stroke="rgba(155,100,255,0.5)" stroke-width="1"/>
+<circle cx="108" cy="334" r="2" fill="#6633cc"/>
+<circle cx="356" cy="296" r="6" fill="rgba(155,100,255,0.15)" filter="url(#cabGlw)"/>
+<circle cx="356" cy="296" r="4.5" fill="#9b79ff" stroke="rgba(155,100,255,0.5)" stroke-width="1"/>
+<circle cx="356" cy="296" r="2" fill="#6633cc"/>
+
+<!-- Green -->
+<circle cx="304" cy="296" r="6" fill="rgba(0,255,136,0.15)" filter="url(#cabGlw)"/>
+<circle cx="304" cy="296" r="4.5" fill="#00ff88" stroke="rgba(0,255,136,0.5)" stroke-width="1"/>
+<circle cx="304" cy="296" r="2" fill="#00aa44"/>
+<circle cx="828" cy="302" r="6" fill="rgba(0,255,136,0.15)" filter="url(#cabGlw)"/>
+<circle cx="828" cy="302" r="4.5" fill="#00ff88" stroke="rgba(0,255,136,0.5)" stroke-width="1"/>
+<circle cx="828" cy="302" r="2" fill="#00aa44"/>
+
+<!-- Pink -->
+<circle cx="174" cy="334" r="6" fill="rgba(255,50,150,0.15)" filter="url(#cabGlw)"/>
+<circle cx="174" cy="334" r="4.5" fill="#ff4499" stroke="rgba(255,50,150,0.5)" stroke-width="1"/>
+<circle cx="174" cy="334" r="2" fill="#cc0055"/>
+<circle cx="534" cy="302" r="6" fill="rgba(255,50,150,0.15)" filter="url(#cabGlw)"/>
+<circle cx="534" cy="302" r="4.5" fill="#ff4499" stroke="rgba(255,50,150,0.5)" stroke-width="1"/>
+<circle cx="534" cy="302" r="2" fill="#cc0055"/>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- OUTER FRAME — thin border over everything -->
+<!-- ════════════════════════════════════════════════════════ -->
+<rect x="0.5" y="0.5" width="859" height="389" rx="0"
+      fill="none" stroke="rgba(80,80,180,0.2)" stroke-width="1"/>
+<!-- Bottom accent line -->
+<line x1="0" y1="389" x2="860" y2="389" stroke="rgba(100,100,220,0.15)" stroke-width="1"/>
+
 </svg>
