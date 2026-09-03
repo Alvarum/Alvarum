@@ -1,17 +1,26 @@
-<svg width="1280" height="52" viewBox="0 0 1280 52" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Decorative divider</title>
-  <desc id="desc">Thin signal divider with nodes and subtle gradient.</desc>
-  <defs>
-    <linearGradient id="line" x1="0" y1="26" x2="1280" y2="26" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#DDEBE7" stop-opacity="0" />
-      <stop offset="0.12" stop-color="#DDEBE7" stop-opacity="0.12" />
-      <stop offset="0.5" stop-color="#DDEBE7" stop-opacity="0.52" />
-      <stop offset="0.88" stop-color="#DDEBE7" stop-opacity="0.12" />
-      <stop offset="1" stop-color="#DDEBE7" stop-opacity="0" />
-    </linearGradient>
-  </defs>
-  <path d="M48 26H462C503 26 519 13 554 13H726C761 13 777 26 818 26H1232" stroke="url(#line)" stroke-width="1.6" />
-  <circle cx="554" cy="13" r="3.2" fill="#DDEBE7" fill-opacity="0.8" />
-  <circle cx="726" cy="13" r="3.2" fill="#DDEBE7" fill-opacity="0.8" />
-  <circle cx="642" cy="26" r="4" fill="#C7DED6" fill-opacity="0.84" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 32" width="1200" height="32" role="img" aria-labelledby="t d">
+<title id="t">Divider</title><desc id="d">A corroded line, broken in the middle.</desc>
+<defs>
+ <linearGradient id="w1" x1="0" y1="0" x2="560" y2="0" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#8A7350" stop-opacity="0"/><stop offset="0.25" stop-color="#8A7350" stop-opacity="0.42"/>
+  <stop offset="1" stop-color="#9C8154" stop-opacity="0.78"/>
+ </linearGradient>
+ <linearGradient id="w2" x1="640" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#9C8154" stop-opacity="0.78"/><stop offset="0.75" stop-color="#8A7350" stop-opacity="0.42"/>
+  <stop offset="1" stop-color="#8A7350" stop-opacity="0"/>
+ </linearGradient>
+ <filter id="rz" x="-60%" y="-400%" width="220%" height="900%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.14" numOctaves="3" seed="13" result="t"/>
+  <feDisplacementMap in="SourceGraphic" in2="t" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+ </filter>
+</defs>
+<path d="M34,16 H556" fill="none" stroke="url(#w1)" stroke-width="2" stroke-linecap="round"/>
+<path d="M644,16 H1166" fill="none" stroke="url(#w2)" stroke-width="2" stroke-linecap="round"/>
+<g filter="url(#rz)" fill="#7E4A22">
+  <ellipse cx="300" cy="16" rx="16" ry="2.4" opacity="0.45"/>
+  <ellipse cx="470" cy="16" rx="10" ry="2.2" opacity="0.5"/>
+  <ellipse cx="600" cy="16" rx="22" ry="3" opacity="0.4"/>
+  <ellipse cx="760" cy="16" rx="13" ry="2.2" opacity="0.45"/>
+  <ellipse cx="960" cy="16" rx="18" ry="2.4" opacity="0.38"/>
+</g>
 </svg>
