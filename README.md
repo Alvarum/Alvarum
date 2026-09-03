@@ -6,19 +6,15 @@
 
 *Systems, tools and strange little machines.*
 
-Software developer working across backend systems, infrastructure,
-automation, networking and edge computing.
-
-Most of my work today involves distributed monitoring and critical
-infrastructure: remote systems, telemetry, diagnostics, automation and the
-software that keeps all of it observable and manageable.
+Software developer working somewhere between software, infrastructure,
+networks and things with cables attached to them.
 
 I tend to work across layers rather than around a particular stack, from
 application code and services to operating systems, networks and devices in
 the field.
 
-Outside of work, I usually end up making games, music software, graphics
-experiments or whatever else seems interesting at the time.
+I also make games, music software, graphics experiments and other things
+that seemed like a good idea at the time.
 
 <p align="center">
   <img src="./assets/divider.svg" alt="" width="100%">
@@ -26,17 +22,17 @@ experiments or whatever else seems interesting at the time.
 
 ## These days
 
-I spend most of my time building and maintaining systems that have to deal
-with unreliable networks, remote hardware, incomplete information and things
-failing in inconvenient ways.
+Most of my work involves distributed monitoring and critical infrastructure:
+remote systems, telemetry, diagnostics, automation and the software that
+keeps all of it observable and manageable.
 
-That includes distributed monitoring, operational tooling, telemetry,
-diagnostics, automation and infrastructure spread across hundreds of remote
-sites.
+A lot of that means dealing with unreliable networks, remote hardware,
+incomplete information and things failing in inconvenient ways.
 
-Lately I've also been experimenting with local AI, machine learning for
-operational data, predictive diagnostics and ways of making monitoring
-systems understand more than a collection of fixed thresholds.
+Lately I've been experimenting with local AI, machine learning for
+operational data and predictive diagnostics.
+
+Still figuring out how much intelligence the machines actually need.
 
 <p align="center">
   <img src="./assets/divider.svg" alt="" width="100%">
@@ -49,12 +45,12 @@ things for no particularly useful reason.
 
 MUGEN, RPG Maker XP, FPS Creator, Game Boy Color development, game mods,
 Windows XP themes, Linux, homebrew, servers, websites, Flash, pixel art,
-animation and a lot of small scripts and programs.
+animation and a suspicious amount of small scripts and programs.
 
-I published mods, scripts, installers and tutorials on Taringa and small
+I published mods, scripts, installers and tutorials on Taringa and tiny
 forums in the 2000s.
 
-A surprising amount of what I do now started there.
+Somehow this eventually became a job.
 
 <p align="center">
   <img src="./assets/divider.svg" alt="" width="100%">
@@ -65,6 +61,8 @@ A surprising amount of what I do now started there.
 I make music, draw, collect old hardware and read a lot.
 
 Big fan of horror, sci-fi and weird fiction.
+
+I am usually working on something unnecessary.
 
 <p align="center">
   <img src="./assets/divider.svg" alt="" width="100%">
