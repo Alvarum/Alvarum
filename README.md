@@ -1,6 +1,6 @@
-<p align="center">
+<!-- <p align="center">
   <img src="./assets/header.svg" alt="Álvaro Robles header" width="100%">
-</p>
+</p> -->
 
 # Álvaro Robles
 
